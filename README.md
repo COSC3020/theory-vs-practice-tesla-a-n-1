@@ -32,10 +32,13 @@
   complexity suggests a different time.
 
     + Real time performace can differ from predicted performace when:
-        - The tree could be unbalanced leading to excessive time to traverse tree
-        - The algorithm could be run on an old computer with outdated/broken processing
-        - The algorithm could be run on a computer that has other programs running which
-            occupy the CPU
+        - The tree could be unbalanced leading to excessive time to traverse tree. What I mean by this is the tree could have become a linked list which would mean a worst case O(n) vs. O(log n)
+            With random permutations, its not likely, but as Jim Ward said in Data Structures, if elements were put in in sorted or almost sorted order, the tree would become very unbalanced.
+            thus changing the complexity from O(log n) to O(n) which explains the jump from 6.67 seconds to 100 seconds.
+        - Another reason could be due to the various positions the target could be in relative to the root of the tree. For example, if the element were close to the root in the 1,000 element tree but in a leaf node in the big 10,000 element tree, the actual path to travel on would be MUCH longer than the average case.
+        - The load on the laptop's memory increased compared to when the smaller tree was run or the 1,000 element tree fit in the memory left and the 10,000 element tree. This would cause a slowdown for the larger tree and not the smaller tree if there were a memory threshold that could fit 1,000 elements but not 10,000 elements and it had to resort to other hardware to process the extra data.
+
+
 
 [Asymptotic Complexity](https://www.sciencedirect.com/topics/computer-science/asymptotic-complexity)
 
